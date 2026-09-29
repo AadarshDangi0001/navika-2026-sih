@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #f5f5f2;
+  --color-surface-raised: #ffffff;
+  --color-surface-hover: #eeede8;
+  --color-surface-sunken: #efeee9;
+
+  --color-border: #e3e2dc;
+  --color-border-subtle: #ececE7;
+  --color-border-strong: #d4d3cb;
+
+  --color-text-primary: #16171c;
+  --color-text-secondary: #65646d;
+  --color-text-muted: #9d9ca3;
+
+  --color-accent: #3355e6;
+  --color-accent-light: #e8ecfd;
+  --color-accent-dim: #5c76ea;
+
+  --color-accent-green: #0d9668;
+  --color-accent-green-light: #e1f6ee;
+
+  --color-sidebar: #0e0f14;
+  --color-sidebar-raised: #16181f;
+  --color-sidebar-border: #24262f;
+  --color-sidebar-text: #cfd0d8;
+  --color-sidebar-text-dim: #6d6f7c;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(20, 20, 25, 0.04), 0 1px 1px rgba(20, 20, 25, 0.03);
+  --shadow-card-hover: 0 8px 20px -6px rgba(20, 20, 25, 0.10), 0 2px 6px -2px rgba(20, 20, 25, 0.06);
+  --shadow-panel: 0 16px 40px -12px rgba(15, 15, 20, 0.18), 0 4px 14px -6px rgba(15, 15, 20, 0.08);
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.woff2') format('woff2');
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d0c8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8b7ad;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #2c2f39;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #3a3d49;
+}
+
+.card {
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
